@@ -1,0 +1,13 @@
+@import "mixin";
+
+.clear-fix{
+  @include clear-fix();
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
