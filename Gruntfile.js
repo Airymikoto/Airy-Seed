@@ -66,7 +66,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: "src",
-                    src: [""],
+                    src: ["assets/images/**"],
                     dest: "www"
                 }]
             }
@@ -96,7 +96,7 @@ module.exports = function (grunt) {
                         expand: true,
                         cwd: "src/templates/",
                         src: ["**/*.tpl.html"],
-                        dest: "src/",
+                        dest: "src/pages/",
                         ext: ".html"
                     }
                 ]
@@ -126,5 +126,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-preprocess");
 
     grunt.registerTask("default", ["connect:dev", "watch"]);
-    grunt.registerTask("build", ["env:build", "clean:build", "preprocess:build", "compass:build", "uglify", "connect:build"]);
+    grunt.registerTask("build", ["env:build", "clean:build", "preprocess:build", "compass:build", "copy:build", "uglify", "connect:build"]);
 };
